@@ -3,12 +3,17 @@
 ;;;
 
 (define-module compat.sicp
-  (export nil false get put get-coercion put-coercion
+  (export nil runtime false get put get-coercion put-coercion
           cons-stream))
 
 ;; This doesn't make nil as a boolean false, but in SICP nil is exclusively
 ;; used to denote an empty list, so it's ok.
 (define nil '())
+
+;; Exercise 1.22
+(define (runtime)
+  (round->exact (* (expt 10 6)
+		   (time->seconds (current-time)))))
 
 ;; Section 2.3
 ;; Boolean false
