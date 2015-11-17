@@ -4,7 +4,7 @@
 
 (define-module compat.sicp
   (export nil runtime false get put get-coercion put-coercion
-          cons-stream))
+          cons-stream user-initial-environment))
 
 ;; This doesn't make nil as a boolean false, but in SICP nil is exclusively
 ;; used to denote an empty list, so it's ok.
@@ -43,3 +43,5 @@
   (syntax-rules ()
     [(_ a d) (cons a (delay d))]))
 
+;; Section 4.1.5
+(define user-initial-environment (interactive-environment))
