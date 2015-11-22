@@ -3,8 +3,10 @@
 ;;;
 
 (define-module compat.sicp
-  (export nil runtime false get put get-coercion put-coercion
+  (use srfi-27)
+  (export nil runtime true random false get put get-coercion put-coercion
           cons-stream user-initial-environment))
+(select-module compat.sicp)
 
 ;; This doesn't make nil as a boolean false, but in SICP nil is exclusively
 ;; used to denote an empty list, so it's ok.
@@ -14,6 +16,11 @@
 (define (runtime)
   (round->exact (* (expt 10 6)
 		   (time->seconds (current-time)))))
+
+;; Section 1.2
+(define true #t)
+(define (random n)
+  (random-integer n))
 
 ;; Section 2.3
 ;; Boolean false
