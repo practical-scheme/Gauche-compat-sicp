@@ -44,4 +44,4 @@
     [(_ a d) (cons a (delay d))]))
 
 ;; Section 4.1.5
-(define user-initial-environment (interactive-environment))
+(define user-initial-environment (interaction-environment))
