@@ -5,7 +5,7 @@
 (define-module compat.sicp
   (use srfi-27)
   (export nil runtime true random false get put get-coercion put-coercion
-          cons-stream user-initial-environment))
+          cons-stream user-initial-environment extend))
 (select-module compat.sicp)
 
 ;; This doesn't make nil as a boolean false, but in SICP nil is exclusively
@@ -52,3 +52,11 @@
 
 ;; Section 4.1.5
 (define user-initial-environment (interaction-environment))
+
+;; Section 4.4.4
+;; 'Extend' is bound to a syntax in Gauche's default environment, which
+;; may interfere with extend-if-consistent code; unless the user defines
+;; her own extend first, the compiler refers to the Gauche's extend and
+;; raises an error.   We export a dummy 'extend' binding so that
+;; the user won't be confused.
+(define extend #f)
