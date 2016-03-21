@@ -15,7 +15,7 @@ Clone the repo, or download zip and extract.  Then:
   
 Now, in gosh prompt or Gauche script you can use `compat.sicp`:
 
-    gosh> (use compat.scip)
+    gosh> (use compat.sicp)
 
 
 
