@@ -21,6 +21,7 @@
 (define true #t)
 (define (random n)
   (random-integer n))
+(define (remainder a b) (mod a b))
 
 ;; Section 2.3
 ;; Boolean false
