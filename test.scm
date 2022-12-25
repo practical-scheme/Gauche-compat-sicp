@@ -9,7 +9,3 @@
 (test-module 'compat.sicp)
 
 (test-end :exit-on-failure #t)
-
-
-
-

@@ -3,7 +3,7 @@
 ;;;
 
 (define-module compat.sicp
-  (use srfi-27)
+  (use srfi.27)
   (export nil runtime true random false get put get-coercion put-coercion
           cons-stream user-initial-environment extend))
 (select-module compat.sicp)
@@ -15,7 +15,7 @@
 ;; Exercise 1.22
 (define (runtime)
   (round->exact (* (expt 10 6)
-		   (time->seconds (current-time)))))
+                   (time->seconds (current-time)))))
 
 ;; Section 1.2
 (define true #t)
