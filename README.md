@@ -12,12 +12,7 @@ Clone the repo, or download zip and extract.  Then:
 
     $ ./configure
     $ make install
-  
+
 Now, in gosh prompt or Gauche script you can use `compat.sicp`:
 
     gosh> (use compat.sicp)
-
-
-
-
-
