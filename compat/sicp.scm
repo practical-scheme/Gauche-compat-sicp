@@ -55,7 +55,8 @@
 
 ;; Section 3.4.2
 (define (parallel-execute thunk1 . thunks)
-  (pmap (^p (p)) (cons thunk1 thunks) (make-fully-concurrent-mapper)))
+  (pmap (^p (p)) (cons thunk1 thunks) (make-fully-concurrent-mapper))
+  (undefined))
 
 (define *global-lock* (make-mutex))     ;for test-and-set!
 
