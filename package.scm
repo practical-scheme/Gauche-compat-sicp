@@ -3,6 +3,7 @@
 ;;
 
 (define-gauche-package "Gauche-compat-sicp"
+  :repository "https://github.com/practical-scheme/Gauche-compat-sicp.git"
   :version "1.1"
   :description "Compatibility module to run SICP exercises\n\
                 This packages adds several primitives assumed by SICP\n\
@@ -13,5 +14,4 @@
   :maintainers ()
   :licenses ("BSD")
   :homepage "https://practical-scheme.net/gauche"
-  :repository "https://github.com/shirok/Gauche-compat-sicp.git"
   )
