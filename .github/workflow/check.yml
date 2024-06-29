@@ -1,0 +1,18 @@
+name: Build and test
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+    - uses: actions/checkout@v3
+    - uses: practical-scheme/setup-gauche@v5
+      with:
+        prebuilt-binary: true
+    - name: Build and check
+      run: |
+        ./configure
+        make
+        make -s check
